@@ -80,6 +80,30 @@
           $("#panel").slideToggle("slow");
           $(".click").toggle();
         });
+        $("h1").hover(
+          function () {
+            $("h1").css("background-color", "orange");
+          },
+          function () {
+            $("h1").css("background-color", "wheat");
+          }
+        );
+        $("h4").hover(
+          function () {
+            $("h4").css("background-color", "orange");
+          },
+          function () {
+            $("h4").css("background-color", "wheat");
+          }
+        );
+        $("#flip").hover(
+          function () {
+            $("#flip").css("background-color", "orange");
+          },
+          function () {
+            $("#flip").css("background-color", "wheat");
+          }
+        );
       });
     </script>
   </head>
@@ -98,7 +122,6 @@
     <div class="ftext">
       <div id="flip">
         <h2>我認為的美食<br /></h2>
-
         <p class="click">Click</p>
       </div>
       <div id="panel">
