@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <style>
       div {
         clear: left;
@@ -26,13 +27,29 @@
         float: left;
       }
       .ftext {
-        float: right; /*文字在右邊 */
+        float: right; /* 文字在右邊 
+        position: absolute;
+        top: 200px;
+        right: 100px;*/
       }
       h1,
-      h4,
-      h2,
-      p {
+      h4 {
         background-color: wheat;
+      }
+      .click {
+        color: lightslategrey;
+      }
+
+      #panel,
+      #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: wheat;
+        border: solid 1px white;
+      }
+      #panel {
+        padding: 50px;
+        display: none;
       }
     </style>
     <script>
@@ -57,6 +74,13 @@
         // 將大圖 img 的 src 屬性設為小圖之 src 屬性值
         bigImg.setAttribute("src", imgs[index].getAttribute("src"));
       }
+
+      $(document).ready(function () {
+        $("#flip").click(function () {
+          $("#panel").slideToggle("slow");
+          $(".click").toggle();
+        });
+      });
     </script>
   </head>
   <body>
@@ -72,11 +96,17 @@
       <img class="small" src="Hw3\bbq.jpg" />
     </div>
     <div class="ftext">
-      <h2>美食</h2>
-      <p>是讓人吃時感到舒暢、放鬆心情的</p>
-      <p>充分滿足自己的味蕾</p>
-      <p>洋溢幸福的滋味</p>
-      <p>也是生活的小確幸</p>
+      <div id="flip">
+        <h2>我認為的美食<br /></h2>
+
+        <p class="click">Click</p>
+      </div>
+      <div id="panel">
+        <p>是讓人吃時感到舒暢、放鬆心情的</p>
+        <p>充分滿足自己的味蕾</p>
+        <p>洋溢幸福的滋味</p>
+        <p>也是生活的小確幸</p>
+      </div>
     </div>
     <img id="big" src="Hw3\food3.jpg" hspace="45" />
   </body>
